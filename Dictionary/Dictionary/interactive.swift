@@ -36,7 +36,9 @@ class Interactive {
                 
             case "ci":
                 startCheckIn()
-           
+                
+            case "ab":
+                askQuestionsThenAddBook()
                 
             default:
                 print("Inter a valid choice")
@@ -73,7 +75,19 @@ class Interactive {
             print("Invalid input")
         }
         
-            }
+    }
+    
+    func askQuestionsThenAddBook() {
+        print("What is the id of the book to add?")
+        currentInPut = io.getInput()
+        let id: Int = Int(currentInPut) ?? 0
+        
+        print("What is the title of the book to add?")
+        let title = io.getInput()
+        
+        library.addBook(id: id, title: title)
+        
+    }
 }
 
 

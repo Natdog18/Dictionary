@@ -37,8 +37,8 @@ class Library {
         book = Book(id: 4, title: "Little House", checkedIn: true)
         bookDictionary[4] = book
         
-        book = Book(id: 1, title: "Gone with the Wind", checkedIn: true)
-        bookDictionary[1] = book
+        book = Book(id: 5, title: "Gone with the Wind", checkedIn: true)
+        bookDictionary[5] = book
 
 
     }
@@ -55,11 +55,15 @@ class Library {
     func checkOut(id:Int) -> String {
         if let book = bookDictionary[id] {
             book.checkedIn = false
-            return "Sorry"
+            return "Checked out successfully"
         } else {
-            return "Check back"
+            return "I was not able to find book id: \(id)"
         }
-
+    }
+    
+    func addBook(id: Int, title: String) {
+        let book = Book(id: id, title: title, checkedIn: true)
+        bookDictionary[id] = book
     }
 }
 
