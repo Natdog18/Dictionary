@@ -12,8 +12,8 @@ class Interactive {
     private var currentInPut: String = "checkin"
     private var io = Io()
     private var library = Library()
-    private var checkIn = checkIn()
-    private var checkOut = checkOut()
+//    private var checkIn = checkIn()
+//    private var checkOut = checkOut()
     
     func go(){
         
@@ -32,10 +32,10 @@ class Interactive {
                 done = true
                 
             case "co":
-                checkOut()
+                startCheckOut()
                 
             case "ci":
-                checkIn()
+                startCheckIn()
            
                 
             default:
@@ -46,8 +46,36 @@ class Interactive {
         
         return
     }
-  
-   
+    
+    func startCheckIn() {
+        
+        // ask what book to check in (by id)
+        print("Enter the id you want to check in: ")
+        if let idToCheckIn = Int(io.getInput()) {
+        
+        // call library.checkIn(id)
+        print(library.checkIn(id: idToCheckIn))
+            
+        } else {
+            print("Invalid input")
+        }
+    }
+    
+    func startCheckOut() {
+        
+        // ask what book to check out (by id)
+        print("Check out a book by id")
+        if let idToCheckOut = Int(io.getInput()){
+            
+        print(library.checkOut(id: idToCheckOut))
+        
+        }else{
+            print("Invalid input")
+        }
+        
+            }
+}
+
 
 
 

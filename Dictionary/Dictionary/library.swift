@@ -33,6 +33,14 @@ class Library {
 
         book = Book(id: 3, title: "Old Yeller", checkedIn: true)
         bookDictionary[3] = book
+        
+        book = Book(id: 4, title: "Little House", checkedIn: true)
+        bookDictionary[4] = book
+        
+        book = Book(id: 1, title: "Gone with the Wind", checkedIn: true)
+        bookDictionary[1] = book
+
+
     }
 
     func checkIn(id:Int) -> String {
@@ -42,18 +50,18 @@ class Library {
         } else {
             return "Failure"
         }
+    }
     
     func checkOut(id:Int) -> String {
-            if let book = bookDictionary[id] {
-                book.checkedOut = true
-                return "Sorry"
-            } else {
-                return "Check back"
-            }
-
-            }
+        if let book = bookDictionary[id] {
+            book.checkedIn = false
+            return "Sorry"
+        } else {
+            return "Check back"
         }
+
     }
+}
 
     
     
